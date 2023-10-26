@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 // return view('welcome');
 // });
 use \App\Http\Controllers\FormController;
+use \App\Http\Controllers\StudentController;
 
 Route::get('/users/{id?}', function ($id) {
     return 'this is user ' . $id;
