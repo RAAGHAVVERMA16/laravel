@@ -10,7 +10,7 @@ class StudentController extends Controller
     {
     return view("student");
     }
-    public function add()
+    public function add(Request $request)
     {
         $student  = new Student();
         $student->name = $request->name;
