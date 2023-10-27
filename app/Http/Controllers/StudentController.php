@@ -22,5 +22,14 @@ class StudentController extends Controller
         
         $student->save();
     }
+    public function getData()
+    {
+
+    $student = Student::all();// we bring data from database
+    return view ('List',['student'=>$student]);
+
+
+
+    }
 
 }
