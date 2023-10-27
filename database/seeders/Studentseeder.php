@@ -10,7 +10,7 @@ class Studentseeder extends Seeder
 {
     /**
      * Run the database seeds.
-     */
+     * changes*/
     public function run()
     {
         Student::create([
