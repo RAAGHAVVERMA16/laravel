@@ -43,7 +43,7 @@ Route::post('/student', [StudentController::class,'add'])->name('details-store')
 Route::get('/login', [formController::class,'log'])->name('login');
 Route::get('/List',[StudentController::class,'getData'])->name('List');
 //middleware..
-Route::get('/student-info', function () {
-    //return view('login');
+// Route::get('/student-info', function () {
+//     //return view('login');
 
-})->middleware(Authenticate::class);
+// })->middleware(Authenticate::class);

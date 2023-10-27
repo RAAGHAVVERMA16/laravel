@@ -30,7 +30,7 @@
                     </li>  
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('add-data')}}">Registration</a>
+                        <a class="nav-link" href="{{route('details')}}">Registration</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('login')}}">Login</a>
