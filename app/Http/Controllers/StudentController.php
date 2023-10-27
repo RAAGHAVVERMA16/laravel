@@ -21,6 +21,7 @@ class StudentController extends Controller
         $student->gender = $request->gender;
         
         $student->save();
+        echo"Form submiitted suucessfully";
     }
     public function getData()
     {
