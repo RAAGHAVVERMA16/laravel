@@ -23,6 +23,7 @@ class StudentController extends Controller
         
         $student->save();
         echo"Form submiitted suucessfully";
+        return redirect()->route("details");
     }
     public function getData()
     {
