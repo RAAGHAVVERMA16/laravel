@@ -19,6 +19,7 @@ class StudentController extends Controller
         $student->section = $request->section;
         $student->address = $request->address;
         $student->gender = $request->gender;
+        $student->phone_number = $request->phone;
         
         $student->save();
         echo"Form submiitted suucessfully";

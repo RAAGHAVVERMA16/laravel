@@ -39,6 +39,11 @@
                     <textarea class="form-control" name="address" id="address" rows="5"></textarea>
                     <span class="error text-danger">*</span>
                 </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number :</label>
+                    <input type="text" class="form-control" name="phone" id="phone" value="">
+                    <span class="error text-danger">*</span>
+                </div>
 
                 <div class="mb-3">
                     <label class="form-label">Gender :</label>
