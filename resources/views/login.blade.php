@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+
+<br>
 <div class="container-md">
     <div class="row-col-6-md">
 <form action="{{ route('login') }}" method="post">
