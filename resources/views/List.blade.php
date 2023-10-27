@@ -16,9 +16,12 @@
             </tr>
         </thead>
         <tbody>
+            @php
+                $serial=1;
+            @endphp
             @foreach($student as $students)
                 <tr>
-                    <td>{{ $students->id }}</td>
+                    <td>{{ $serial++ }}</td>
                     <td>{{ $students->name }}</td>
                     <td>{{ $students->email }}</td>
                     <td>{{ $students->gender }}</td>
