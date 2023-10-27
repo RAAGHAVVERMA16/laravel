@@ -37,7 +37,7 @@
 
   <!-- Register buttons -->
   <div class="text-center">
-    <p>Not a member? <a href="form.php">Register</a></p>
+    <p>Not a member? <a href="{{route('details')}}">Register</a></p>
     <p>or sign up with:</p>
     <button type="button" class="btn btn-link btn-floating mx-1"></button>
 </div>
