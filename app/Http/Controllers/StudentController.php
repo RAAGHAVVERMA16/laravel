@@ -22,5 +22,9 @@ class StudentController extends Controller
         
         $student->save();
     }
+    public function log(Request $request){
+        return view('login');
+        
+    }
 
 }
