@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\FormController;
 use \App\Http\Controllers\StudentController;
 use App\Http\Middleware\Authenticate;
-
+/*
 Route::get('/users/{id?}', function ($id) {
     return 'this is user ' . $id;
 });
@@ -29,19 +29,28 @@ Route::get('/', '\App\Http\Controllers\HomeController@index');
 Route::get('/about', '\App\Http\Controllers\AboutController@index');
 Route::get('/contact', '\App\Http\Controllers\ContactController@index');
 Route::get('/form', '\App\Http\Controllers\formController@index');
-
+*///temporaririly blocked
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/welcome', '\App\Http\Controllers\layoutController@welcome');
-
+Route::group(['middleware'=>"web"],function(){
 Route::get('/add-student', [FormController::class,'index'])->name('add-data');
-
 Route::post('/store-data', [FormController::class,'store'])->name('store-data');
 Route::get('/student-info', [StudentController::class,'index'])->name('details');
 Route::post('/student', [StudentController::class,'add'])->name('details-store');
 Route::get('/login', [StudentController::class,'log'])->name('login');
 Route::get('/List',[StudentController::class,'getData'])->name('List');
+
+});
+
+
+
+
+
+
+//Route::get('/welcome', '\App\Http\Controllers\layoutController@welcome');
+
+
 //middleware..
 // Route::get('/student-info', function () {
 //     //return view('login');
