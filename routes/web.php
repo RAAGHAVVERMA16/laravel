@@ -39,3 +39,4 @@ Route::get('/add-student', [FormController::class,'index'])->name('add-data');
 Route::post('/store-data', [FormController::class,'store'])->name('store-data');
 Route::get('/student-info', [StudentController::class,'index'])->name('details');
 Route::post('/student', [StudentController::class,'add'])->name('details-store');
+Route::get('/login', [formController::class,'log'])->name('login');

@@ -21,4 +21,8 @@ class Formcontroller extends Controller
         $user->save();
       
     }
+    public function log(Request $request){
+        return view('login');
+        
+    }
 }
