@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 use \App\Http\Controllers\FormController;
 use \App\Http\Controllers\StudentController;
+use App\Http\Middleware\Authenticate;
 
 Route::get('/users/{id?}', function ($id) {
     return 'this is user ' . $id;
@@ -40,3 +41,7 @@ Route::post('/store-data', [FormController::class,'store'])->name('store-data');
 Route::get('/student-info', [StudentController::class,'index'])->name('details');
 Route::post('/student', [StudentController::class,'add'])->name('details-store');
 Route::get('/login', [formController::class,'log'])->name('login');
+Route::get('/student-info', function () {
+    //return view('login');
+
+})->middleware(Authenticate::class);
