@@ -31,5 +31,9 @@ class StudentController extends Controller
 
 
     }
+    public function log(Request $request){
+        return view('login');
+        
+    }
 
 }
