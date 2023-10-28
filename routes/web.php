@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 // });
 use \App\Http\Controllers\FormController;
 use \App\Http\Controllers\StudentController;
-use App\Http\Middleware\Authenticate;
+use \App\Http\Middleware\Authenticate;
+use \App\Http\Controllers\LoginController;
+use \App\Http\Controllers\Dashboardcontroller;
 /*
 Route::get('/users/{id?}', function ($id) {
     return 'this is user ' . $id;
@@ -33,13 +35,17 @@ Route::get('/form', '\App\Http\Controllers\formController@index');
 
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/login', [StudentController::class,'log'])->name('login');
+Route::post('/loginCheck', [LoginController::class,'authenticate'])->name('login-check');
 Route::group(['middleware'=>"web"],function(){
 Route::get('/add-student', [FormController::class,'index'])->name('add-data');
 Route::post('/store-data', [FormController::class,'store'])->name('store-data');
 Route::get('/student-info', [StudentController::class,'index'])->name('details');
 Route::post('/student', [StudentController::class,'add'])->name('details-store');
-Route::get('/', [StudentController::class,'log'])->name('login');
+
+
 Route::get('/List',[StudentController::class,'getData'])->name('List');
+Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
 });
 
