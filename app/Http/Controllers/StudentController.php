@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Illuminate\Support\Facades\Hash;
 class StudentController extends Controller
 {
     public function index()
@@ -21,9 +22,10 @@ class StudentController extends Controller
         $student->gender = $request->gender;
         $student->phone_number = $request->phone;
         
+        $student->password = Hash::make('123456');
         $student->save();
         echo"Form submiitted suucessfully";
-        return redirect()->route("details");
+        return redirect()->route("login");
     }
     public function getData()
     {
