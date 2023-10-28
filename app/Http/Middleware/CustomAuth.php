@@ -30,18 +30,18 @@ class CustomAuth
     //    }
     //     return $next($request);
     // }
-    public function handle(Request $request, Closure $next): Response
-    {
-        $path = $request->path();
+    // public function handle(Request $request, Closure $next): Response
+    // {
+    //     $path = $request->path();
     
-        // Check if the path is 'list' or 'list.php'
-        if (($path === 'list' || $path === 'list.php') && !Session::get('student')) {
-            // Redirect to the login page if the person is not logged in
-            return redirect('/login');
-        }
+    //     // Check if the path is 'list' or 'list.php'
+    //     if (($path === 'list' || $path === 'list.php') && !Session::get('student')) {
+    //         // Redirect to the login page if the person is not logged in
+    //         return redirect('/login');
+    //     }
     
-        return $next($request);
-    }
+    //     return $next($request);
+    // }
 
 //     public function handle(Request $request, Closure $next): Response
 // {
@@ -52,4 +52,15 @@ class CustomAuth
 
 //     return $next($request);
 // }
+public function handle(Request $request, Closure $next): Response
+{
+    // if (!$request->session()->has('student')) {
+    //     // Redirect to the login page for unauthenticated users
+    //     return redirect('/login');
+    // }
+
+    return $next($request);
+}
+
+
 }
