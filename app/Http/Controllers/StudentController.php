@@ -87,4 +87,4 @@ class StudentController extends Controller
         $student->delete();
         return redirect()->route('List')->with('success', 'Student data deleted successfully');
     }
-}s
+}
