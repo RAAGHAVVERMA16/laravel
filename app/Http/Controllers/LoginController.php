@@ -55,7 +55,7 @@ if (!Hash::check($credentials['password'], $student->password)) {
     return back()->with('error', 'Login Fail, please check password');
  }
     // Authentication failed
-    return back()->withErrors([
+    return back()->with('error'[
         'email' => 'The provided credentials do not match our records.',
     ])->onlyInput('email');
 

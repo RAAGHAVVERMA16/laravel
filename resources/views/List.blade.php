@@ -1,19 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.success')
     <h1>Student Info</h1>
-    
+  
     <table class="table table-striped" id='table'>
+  
         <thead>
             <tr>
-                <th> Sr. number</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Gender</th>
-                <th>Class</th>
-                <th>Section</th>
-                <th>Address</th>
-                <th>Phone Number</th>
+                <th class="text-center"> Sr. number</th>
+                <th class="text-center">Name</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Gender</th>
+                <th class="text-center">Class</th>
+                <th class="text-center">Section</th>
+                <th class="text-center">Address</th>
+                <th class="text-center">Phone Number</th>
+                <th class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -30,12 +33,20 @@
                     <td>{{ $students->section }}</td>
                     <td>{{ $students->address }}</td>
                     <td>{{ $students->phone_number }}</td>
-                    
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-    <script>
+                    <td>
+    <a href="{{ route('update', ['id' => $students->id]) }}" class="btn btn-info">
+        <span class="glyphicon glyphicon-edit"></span> Edit
+    </a>
+    <a href="{{ route('delete', ['id' => $students->id]) }}" class="btn btn-danger">
+    <span class="glyphicon glyphicon-trash"></span> Delete
+    </a>
+    
+</td>
+</tr>
+@endforeach
+</tbody>
+</table>
+<script>
   $(document).ready(function() {
     $('#table').DataTable();
 } );

@@ -40,5 +40,51 @@ class StudentController extends Controller
         return view('login');   
         
     }
+    public function update(Request $request)
+    {
+       // echo $request->id;
+        //die();
+        $student = Student::find($request->id);
+       // $student = Student::where("id",$request->id)->first();
 
-}
+        return view('update',compact('student'));
+
+    }
+
+    public function update_store(Request $request)
+    {
+        // Validate the request data
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'gender' => 'required|in:Male,Female', // Valid gender values
+            'class' => 'required',
+            'section' => 'required',
+            'address' => 'required',
+            'phone_number' => 'required',
+        ]);
+    
+        // Update the student record with the new data
+        $student = Student::find($request->id);
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->gender = $request->gender;
+        $student->class = $request->class;
+        $student->section = $request->section;
+        $student->address = $request->address;
+        $student->phone_number = $request->phone_number;
+    
+        $student->save();
+    
+        // Redirect back to the list view with a success message
+        return redirect()->route('List')->with('success', 'Student data updated successfully');
+    }
+    
+    
+    public function destroy($id)
+    {
+        $student = Student::find($id);
+        $student->delete();
+        return redirect()->route('List')->with('success', 'Student data deleted successfully');
+    }
+}s
