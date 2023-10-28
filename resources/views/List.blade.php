@@ -2,7 +2,8 @@
 
 @section('content')
     <h1>Student Info</h1>
-    <table class="table table-striped">
+    
+    <table class="table table-striped" id='table'>
         <thead>
             <tr>
                 <th> Sr. number</th>
@@ -34,4 +35,9 @@
             @endforeach
         </tbody>
     </table>
+    <script>
+  $(document).ready(function() {
+    $('#table').DataTable();
+} );
+ </script>
 @endsection
