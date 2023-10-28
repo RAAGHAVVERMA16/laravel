@@ -2,9 +2,11 @@
 @section('content')
 
 <br>
+@include('layouts.success')
 <div class="container-md">
     <div class="row-col-6-md">
-<form action="{{ route('login') }}" method="post">
+<form action="{{ route('login-check') }}" method="post">
+  @csrf
   <!-- Email input -->
 
   <div class="form-outline mb-4">
