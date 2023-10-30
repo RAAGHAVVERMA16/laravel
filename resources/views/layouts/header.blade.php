@@ -34,15 +34,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"></a>
                     </li>  
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}">Logout</a>
-                    </li>  
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('details')}}">Registration</a>
-                    </li>
+                    @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('login')}}">Login</a>
+                    </li>
+                    @endguest
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('logout')}}">Logout</a>
+                    </li>  
+                    @endauth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('details')}}">Registration</a>
                     </li>
                 </ul>
             </div>

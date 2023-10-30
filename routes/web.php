@@ -36,6 +36,7 @@ Route::get('/form', '\App\Http\Controllers\formController@index');
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/login', [StudentController::class,'log'])->name('login');
+Route::get('/logout', [StudentController::class,'logout'])->name('logout');
 Route::post('/loginCheck', [LoginController::class,'authenticate'])->name('login-check');
 Route::group(['middleware'=>"web"],function(){
 Route::get('/add-student', [FormController::class,'index'])->name('add-data');

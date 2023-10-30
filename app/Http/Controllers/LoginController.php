@@ -55,10 +55,19 @@ if (!Hash::check($credentials['password'], $student->password)) {
     return back()->with('error', 'Login Fail, please check password');
  }
     // Authentication failed
-    return back()->with('error'[
-        'email' => 'The provided credentials do not match our records.',
-    ])->onlyInput('email');
+    // return back()->with('error'[
+    //     'email' => 'The provided credentials do not match our records.',
+    // ])->onlyInput('email');
 
 
 }
+public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout(); // Log out the user
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login');  // Redirect to the home page or any other page after logout
+    }
 }
