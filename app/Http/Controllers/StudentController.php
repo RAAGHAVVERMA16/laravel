@@ -103,5 +103,9 @@ class StudentController extends Controller
         $student->delete();
         return redirect()->route('List')->with('success', 'Student data deleted successfully');
     }
-    
+    public function card()
+    {
+        $students = Student::all();
+        return view('card', ['students' => $students]);
+    }
 }
