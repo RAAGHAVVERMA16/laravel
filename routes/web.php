@@ -39,7 +39,7 @@ use App\Http\Controllers\UserController;
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/login', [StudentController::class,'log'])->name('login');
-Route::get('/logout', [StudentController::class,'logout'])->name('logout');
+Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 Route::post('/loginCheck', [LoginController::class,'authenticate'])->name('login-check');
 Route::get('/upload', [UploadController::class, 'index'])->name('uplaod');
 Route::post('/upload', [UploadController::class, 'upload'])->name('upload');

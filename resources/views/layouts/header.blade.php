@@ -34,16 +34,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"></a>
                     </li>  
-                    @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('login')}}">Login</a>
-                    </li>
-                    @endguest
-                    @auth
+                   
+                    @if (Auth::guard('admins')->check())
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('logout')}}">Logout</a>
                     </li>  
-                    @endauth
+                  @else
+                  <li class="nav-item">
+                        <a class="nav-link" href="{{route('login')}}">Login</a>
+                    </li>
+                    @endif
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('details')}}">Registration</a>
                     </li>

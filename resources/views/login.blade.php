@@ -10,7 +10,7 @@
   <!-- Email input -->
 
   <div class="form-outline mb-4">
-    <label class="form-label" for="form21">Email address</label>
+    <label class="form-label" for="form21">Email address </label>
     <input type="email" name="email" id="email" class="form-control" placeholder="Email"/>
   </div>
 

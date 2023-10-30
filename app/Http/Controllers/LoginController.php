@@ -17,6 +17,14 @@ class LoginController extends Controller
         'email' => ['required', 'email'],
         'password' => ['required'],
     ]);
+  
+    if(Auth::guard('admins')->attempt(['email' => $request->email, 'password' => $request->password])){
+       return redirect()->intended(route('dashboard'));
+    } else{
+        return back()->with('error', 'Login Fail, please check email id');
+
+    }
+
 // die('123');
     
     // if (Auth::attempt($credentials)) {
@@ -41,19 +49,19 @@ class LoginController extends Controller
     //         return redirect()->intended(route('dashboard'));
     //     }
 
-    $student = Student::where('email', $credentials['email'])->first();
-    if (!$student) {
-        return back()->with('error', 'Login Fail, please check email id');
-     }
+//     $student = Student::where('email', $credentials['email'])->first();
+//     if (!$student) {
+//         return back()->with('error', 'Login Fail, please check email id');
+//      }
 
-if ($student && Hash::check($credentials['password'], $student->password)) {
-    // Authentication successful
-    $request->session()->regenerate();
-    return redirect()->intended(route('dashboard'));
-}
-if (!Hash::check($credentials['password'], $student->password)) {
-    return back()->with('error', 'Login Fail, please check password');
- }
+// if ($student && Hash::check($credentials['password'], $student->password)) {
+//     // Authentication successful
+//     $request->session()->regenerate();
+//     return redirect()->intended(route('dashboard'));
+// }
+// if (!Hash::check($credentials['password'], $student->password)) {
+//     return back()->with('error', 'Login Fail, please check password');
+//  }
     // Authentication failed
     // return back()->with('error'[
     //     'email' => 'The provided credentials do not match our records.',
@@ -61,12 +69,12 @@ if (!Hash::check($credentials['password'], $student->password)) {
 
 
 }
-public function logout(Request $request): RedirectResponse
+public function logout(Request $request)
     {
-        Auth::logout(); // Log out the user
+        Auth::guard('admins')->logout(); // Log out the user
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        // $request->session()->invalidate();
+        // $request->session()->regenerateToken();
 
         return redirect()->route('login');  // Redirect to the home page or any other page after logout
     }

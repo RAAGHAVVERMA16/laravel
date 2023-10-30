@@ -1,13 +1,17 @@
-
 <?php
-use Illuminate\Notification\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatabale;
-class Admin extends Authenticatabale
+namespace App\Models;
+
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+use Laravel\Sanctum\HasApiTokens;
+class Admin extends Authenticatable
 {
-    use Notifiable;
+   
     protected $guard = "admin"; 
-    protected $fillable = ["name","email","password",];
-    protected $hidden = ["password","remember_token",];
+    protected $table = 'admins';
+  
 } 
 
 

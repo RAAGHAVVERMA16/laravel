@@ -31,7 +31,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Dashboard</a></li>
+        <li class="active"><a href="#">Dashboard </a></li>
         <li><a href="#">Age</a></li>
         <li><a href="#">Gender</a></li>
         <li><a href="#">Geo</a></li>
@@ -43,9 +43,9 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
-      <h2>Logo</h2>
+      <h2>Logo ({{Auth::guard('admins')->user()->name}})</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#section1">Dashboard</a></li>
+        <li class="active"><a href="#section1">Dashboard </a></li>
         <li><a href="#section2">Age</a></li>
         <li><a href="#section3">Gender</a></li>
         <li><a href="#section3">Geo</a></li>
