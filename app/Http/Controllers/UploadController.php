@@ -37,7 +37,7 @@ class UploadController extends Controller
             Session::flash('error','File not uploaded.');
             Session::flash('alert-class', 'alert-danger');
       }
-      return redirect('/');
+      return redirect('/')->with('success','image uplaoded successfully');
  }
 }
 

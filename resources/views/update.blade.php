@@ -43,6 +43,18 @@
             <label for="phone_number">Phone Number</label>
             <input type="text" name="phone_number" value="{{ $student->phone_number }}" class="form-control">
         </div>
+        
+                <div class="form-group">
+                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">File <span class="required">*</span></label>
+                     <div class="col-md-6 col-sm-6 col-xs-12">
+
+                          <input type='file' name='file' class="form-control">
+
+                          @if ($errors->has('file'))
+                                <span class="errormsg text-danger">{{ $errors->first('file') }}</span>
+                          @endif
+                     </div>
+                </div>
 
         <button type="submit" class="btn btn-primary">Update Student</button>
     </form>

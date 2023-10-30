@@ -13,19 +13,34 @@ class StudentController extends Controller
     }
     public function add(Request $request)
     {
-        $student  = new Student();
+        // Create a new student instance
+        $student = new Student();
         $student->name = $request->name;
-        $student->email = $request->email; 
+        $student->email = $request->email;
         $student->class = $request->class;
         $student->section = $request->section;
         $student->address = $request->address;
         $student->gender = $request->gender;
         $student->phone_number = $request->phone;
-        
+
+        // Hash a default password (you may want to change this)
         $student->password = Hash::make('123456');
+
+        // Upload and store the image
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $location = 'uploads/users'; // Specify your desired storage location
+            $file->move($location, $filename);
+
+            // Set the image path in the student record
+            $student->image = $location . '/' . $filename;
+        }
+
         $student->save();
-        echo"Form submiitted suucessfully";
-        return redirect()->route("login");
+
+        // Redirect with a success message
+        return redirect()->route("login")->with('success', 'Form submitted successfully');
     }
     public function getData()
     {
@@ -73,6 +88,7 @@ class StudentController extends Controller
         $student->section = $request->section;
         $student->address = $request->address;
         $student->phone_number = $request->phone_number;
+        $student->image= $request->image;
     
         $student->save();
     

@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th class="text-center"> Sr. number</th>
+                <th class="text-center"> Image</th>
                 <th class="text-center">Name</th>
                 <th class="text-center">Email</th>
                 <th class="text-center">Gender</th>
@@ -26,6 +27,13 @@
             @foreach($student as $students)
                 <tr>
                     <td>{{ $serial++ }}</td>
+                    <td>
+                    @if ($students->image)
+                        <img src="{{ asset($students->image) }}" alt="Student Image" width="50" height="50">
+                    @else
+                    <img src="{{asset('uploads/users/1698666501_images.jpg') }}" alt="Student Image" width="50" height="50">
+                    @endif
+                </td>
                     <td>{{ $students->name }}</td>
                     <td>{{ $students->email }}</td>
                     <td>{{ $students->gender }}</td>
