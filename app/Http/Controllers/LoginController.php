@@ -70,4 +70,13 @@ public function logout(Request $request): RedirectResponse
 
         return redirect()->route('login');  // Redirect to the home page or any other page after logout
     }
+    public function login(Request $request)
+{
+    if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+        // Authentication successful, redirect or perform other actions
+        $adminUser = Auth::guard('admin')->user();//getting data
+    } else {
+        // Authentication failed, handle the error
+    }
+}
 }

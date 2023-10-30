@@ -52,6 +52,11 @@ Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard')
 Route::get('update/{id}', [StudentController::class, 'update'])->name('update');
 Route::post('update/{id}', [StudentController::class, 'update_store'])->name('update-data');
 Route::get('delete/{id}', [StudentController::class, 'destroy'])->name('delete');
+Route::group(['middleware'=> ['auth:admin']],function(){
+    Route::get('/users', [UserController::class, 'users']);
+});
+
+
 
 
 //Route::get('/welcome', '\App\Http\Controllers\layoutController@welcome');
