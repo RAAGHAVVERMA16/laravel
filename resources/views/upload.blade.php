@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>How to upload a file with validation in Laravel 10</title>
-
+    @include('layouts.success')
     <!-- Meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">

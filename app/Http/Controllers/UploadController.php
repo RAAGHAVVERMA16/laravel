@@ -8,6 +8,7 @@ use Session;
 class UploadController extends Controller
 
 {
+   
     public function index()
     {
         return view('upload');
@@ -29,11 +30,11 @@ class UploadController extends Controller
             // Upload file
             $file->move($location,$filename);
 
-            Session::flash('message','Upload Successfully.');
+            Session::flash('success','Upload Successfully.');
             Session::flash('alert-class', 'alert-success');
       }else
       {
-            Session::flash('message','File not uploaded.');
+            Session::flash('error','File not uploaded.');
             Session::flash('alert-class', 'alert-danger');
       }
       return redirect('/');
