@@ -25,7 +25,7 @@ class UploadController extends Controller
             $filename = time().'_'.$file->getClientOriginalName();
 
             // File upload location
-            $location = 'laravel\resources\views\uploads';
+            $location = 'uploads/users';
 
             // Upload file
             $file->move($location,$filename);
