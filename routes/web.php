@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,8 @@ use \App\Http\Controllers\StudentController;
 use \App\Http\Middleware\Authenticate;
 use \App\Http\Controllers\LoginController;
 use \App\Http\Controllers\Dashboardcontroller;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\UserController;
 
 // Route::get('/users/{id?}', function ($id) {
 //     return 'this is user ' . $id;
@@ -38,6 +41,8 @@ use \App\Http\Controllers\Dashboardcontroller;
 Route::get('/login', [StudentController::class,'log'])->name('login');
 Route::get('/logout', [StudentController::class,'logout'])->name('logout');
 Route::post('/loginCheck', [LoginController::class,'authenticate'])->name('login-check');
+Route::get('/upload', [UploadController::class, 'index'])->name('uplaod');
+Route::post('/uploadFile', [UploadController::class, 'uploadFile'])->name('uploadFile');
 Route::group(['middleware'=>"web"],function(){
 Route::get('/add-student', [FormController::class,'index'])->name('add-data');
 Route::post('/store-data', [FormController::class,'store'])->name('store-data');
