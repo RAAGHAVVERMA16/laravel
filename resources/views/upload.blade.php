@@ -26,7 +26,7 @@
                   @endif 
                   <!-- Alert message (end) -->
 
-                  <form action="{{route('uploadFile')}}" enctype='multipart/form-data' method="post" >
+                  <form action="{{route('upload')}}" enctype='multipart/form-data' method="post" >
                         {{csrf_field()}}
 
                         <div class="form-group">
