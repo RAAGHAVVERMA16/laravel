@@ -42,7 +42,7 @@ Route::get('/login', [StudentController::class,'log'])->name('login');
 Route::get('/logout', [StudentController::class,'logout'])->name('logout');
 Route::post('/loginCheck', [LoginController::class,'authenticate'])->name('login-check');
 Route::get('/upload', [UploadController::class, 'index'])->name('uplaod');
-Route::post('/uploadFile', [UploadController::class, 'uploadFile'])->name('uploadFile');
+Route::post('/upload', [UploadController::class, 'upload'])->name('upload');
 Route::group(['middleware'=>"web"],function(){
 Route::get('/add-student', [FormController::class,'index'])->name('add-data');
 Route::post('/store-data', [FormController::class,'store'])->name('store-data');
