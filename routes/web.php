@@ -24,6 +24,7 @@ use \App\Http\Controllers\LoginController;
 use \App\Http\Controllers\Dashboardcontroller;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\JointableController;
 
 // Route::get('/users/{id?}', function ($id) {
 //     return 'this is user ' . $id;
@@ -39,6 +40,7 @@ use App\Http\Controllers\UserController;
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/login', [StudentController::class,'log'])->name('login');
+Route::get('join', [JointableController::class, 'index'])->name('join_table');
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 Route::post('/loginCheck', [LoginController::class,'authenticate'])->name('login-check');
 Route::get('/upload', [UploadController::class, 'index'])->name('uplaod');
