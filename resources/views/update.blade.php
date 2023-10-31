@@ -48,7 +48,7 @@
                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">File <span class="required">*</span></label>
                      <div class="col-md-6 col-sm-6 col-xs-12">
 
-                          <input type='file' name='file' class="form-control">
+                          <input type='file' name='image' class="form-control" id="image">
 
                           @if ($errors->has('file'))
                                 <span class="errormsg text-danger">{{ $errors->first('file') }}</span>

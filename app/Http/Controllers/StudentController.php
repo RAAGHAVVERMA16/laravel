@@ -89,8 +89,18 @@ class StudentController extends Controller
         $student->address = $request->address;
         $student->phone_number = $request->phone_number;
         $student->image= $request->image;
+    // Upload and store the image
+    if ($request->hasFile('image')) {
+        $file = $request->file('image'); 
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $location = 'uploads/users'; 
+        $file->move($location, $filename);
     
-        $student->save();
+        // Set the image path in the student record
+        $student->image = $location . '/' . $filename;
+    }
+   
+     $student->save();
     
         // Redirect back to the list view with a success message
         return redirect()->route('List')->with('success', 'Student data updated successfully');
