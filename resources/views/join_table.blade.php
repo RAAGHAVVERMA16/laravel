@@ -5,7 +5,7 @@
         <div class="container">    
             <br />
             <div class="table-responsive">
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped" id="table">
                     <thead>
                         <tr>
                             <th>Country</th>
@@ -25,4 +25,9 @@
                 </table>
             </div>
         </div>
+        <script>
+  $(document).ready(function() {
+    $('#table').DataTable();
+} );
+ </script>
 @endsection
