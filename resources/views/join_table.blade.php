@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-@include('layouts.success')
-<div class="container">    
+    @include('layouts.success')
+        <div class="container">    
             <br />
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -25,4 +25,4 @@
                 </table>
             </div>
         </div>
-        @endsection
+@endsection
