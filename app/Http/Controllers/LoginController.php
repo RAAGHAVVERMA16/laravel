@@ -17,29 +17,7 @@ class LoginController extends Controller
         'email' => ['required', 'email'],
         'password' => ['required'],
     ]);
-// die('123');
-    
-    // if (Auth::attempt($credentials)) {
-    //     // Authentication successful
-    //     $request->session()->regenerate();
-    //     // die('123');
-    //     return redirect()->intended(route('dashboard'));
-    // }
 
-    // $student= Student::where('email', $credentials['email'])->first();
-    // if(Hash::check('plain-text', $student->password)) {
-    //     $request->session()->regenerate();
-    //     return redirect()->intended(route('dashboard'));
-    // }
-
-     // $student = Student::where('email', $credentials['email'])->where('password','123456')->first();
-    // if ($student) 
-    //     {
-
-    //         $request->session()->regenerate();
-    //         // die('123');
-    //         return redirect()->intended(route('dashboard'));
-    //     }
 
     $student = Student::where('email', $credentials['email'])->first();
     if (!$student) {
