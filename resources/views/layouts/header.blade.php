@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- <head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"> -->
+    <!-- <script src="//code.jquery.com/jquery-1.12.3.js"></script> -->
+<!-- <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script> -->
+<!-- <script
+    src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+ <link rel="stylesheet"
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+ <!-- <link rel="stylesheet"
+    href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+</head> -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap/bootstrap.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('assets/css/fontawesome/fontawesome.min.css') }}"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <script src="{{ asset('assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
     <script src="//code.jquery.com/jquery-1.12.3.js"></script>
-<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 <script
     src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-<!-- <link rel="stylesheet"
-    href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
-<link rel="stylesheet"
-    href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+ <!-- <link rel="stylesheet" 
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+  <link rel="stylesheet"
+    href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css"> 
+    <!-- <link rel="stylesheet" href="{{ asset('assets/css/dataTables/dataTables.bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/dataTables/dataTables.bootstrap.min.js') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/dataTables/jquery.dataTables.min.js') }}"> -->
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
